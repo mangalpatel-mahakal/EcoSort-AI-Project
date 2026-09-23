@@ -1,0 +1,618 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f8f5;
+    color: #222;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    background-color: #1b5e20;
+}
+
+.logo {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2e7d32;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background-color: #1b5e20;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 50px 60px;
+}
+
+.feature-card {
+    width: 30%;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    padding: 25px;
+    text-align: center;
+    background-color: #1b5e20;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 70px 20px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+    }
+
+    .feature-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+}
+/* Waste Classification Section */
+.classification {
+    text-align: center;
+    padding: 70px 20px;
+    margin-top: 30px;
+}
+
+.classification h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.classification > p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.upload-box {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 35px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#wasteImage {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: 2px dashed #2e7d32;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+#classifyBtn {
+    padding: 13px 28px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2e7d32;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#classifyBtn:hover {
+    background-color: #1b5e20;
+}
+
+#result {
+    max-width: 600px;
+    margin: 30px auto 0;
+    padding: 25px;
+    background-color: #eef7ef;
+    border-radius: 12px;
+}
+
+#result h3 {
+    margin-bottom: 10px;
+}
+
+#wasteType {
+    color: #555;
+}
+
+/* =========================
+   CLASSIFICATION HISTORY
+========================= */
+
+.history-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 35px;
+
+    background: #ffffff;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px
+        rgba(0, 0, 0, 0.10);
+
+    text-align: center;
+}
+
+.history-section h2 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.history-section > p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+#historyList {
+    width: 100%;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 20px;
+    margin-top: 12px;
+
+    background: #f5f9f5;
+
+    border-left: 5px solid #2e7d32;
+    border-radius: 8px;
+
+    text-align: left;
+}
+
+.history-category {
+    font-weight: bold;
+    color: #333;
+}
+
+.history-date {
+    font-size: 14px;
+    color: #777;
+}
+
+
+/* Mobile Responsive */
+
+@media (max-width: 600px) {
+
+    .history-section {
+        margin: 30px 15px;
+        padding: 25px 18px;
+    }
+
+    .history-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+}
+
+/* =========================
+   SMOOTH SCROLL
+========================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* =========================
+   HERO CLASSIFY BUTTON
+========================= */
+
+.hero-button {
+    display: inline-block;
+
+    margin-top: 20px;
+    padding: 12px 24px;
+
+    background: #2e7d32;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background: #1b5e20;
+}
+
+
+/* =========================
+   ABOUT / CONTACT SECTIONS
+========================= */
+
+.info-section {
+    max-width: 1000px;
+
+    margin: 60px auto;
+    padding: 40px 30px;
+
+    background: #ffffff;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+
+    text-align: center;
+}
+
+.info-section h2 {
+    color: #2e7d32;
+
+    margin-bottom: 20px;
+}
+
+.info-section p {
+    color: #555;
+
+    line-height: 1.7;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.steps-container {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin-top: 30px;
+}
+
+.step-card {
+    flex: 1;
+
+    padding: 25px 20px;
+
+    background: #f5f9f5;
+
+    border-radius: 10px;
+
+    border-top: 4px solid #2e7d32;
+}
+
+.step-card h3 {
+    color: #2e7d32;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+    MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .steps-container {
+        flex-direction: column;
+    }
+
+    .info-section {
+        margin: 35px 15px;
+
+        padding: 30px 20px;
+    }
+
+}
+
+/* ================= LIVE CAMERA SCANNER ================= */
+
+.camera-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f4f8fb;
+}
+
+.camera-section h2 {
+    font-size: 32px;
+    color: #1565c0;
+    margin-bottom: 10px;
+}
+
+.camera-section > p {
+    font-size: 17px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+
+/* ================= CAMERA BOX ================= */
+
+.camera-box {
+    width: 90%;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 30px;
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    box-shadow: 0 8px 25px
+        rgba(0, 0, 0, 0.15);
+}
+
+
+/* ================= CAMERA PREVIEW ================= */
+
+#cameraPreview {
+    width: 100%;
+    max-width: 600px;
+    height: 350px;
+
+    background-color: #111;
+
+    border: 3px solid #1565c0;
+    border-radius: 12px;
+
+    object-fit: cover;
+
+    margin-bottom: 25px;
+}
+
+
+/* ================= CAMERA BUTTONS ================= */
+
+.camera-buttons {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 25px;
+}
+
+
+.camera-buttons button {
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* OPEN CAMERA */
+
+#openCameraBtn {
+    background-color: #1565c0;
+    color: white;
+}
+
+#openCameraBtn:hover {
+    background-color: #0d47a1;
+    transform: translateY(-2px);
+}
+
+
+/* CAPTURE BUTTON */
+
+#captureBtn {
+    background-color: #2e7d32;
+    color: white;
+}
+
+#captureBtn:hover:not(:disabled) {
+    background-color: #1b5e20;
+    transform: translateY(-2px);
+}
+
+
+/* CLOSE CAMERA */
+
+#closeCameraBtn {
+    background-color: #d32f2f;
+    color: white;
+}
+
+#closeCameraBtn:hover:not(:disabled) {
+    background-color: #b71c1c;
+    transform: translateY(-2px);
+}
+
+
+/* DISABLED BUTTON */
+
+.camera-buttons button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+/* ================= CAPTURED IMAGE ================= */
+
+#capturedImagePreview {
+    margin-top: 20px;
+}
+
+#capturedImagePreview img {
+    width: 100%;
+    max-width: 400px;
+
+    border-radius: 12px;
+
+    border: 3px solid #1565c0;
+
+    box-shadow: 0 5px 15px
+        rgba(0, 0, 0, 0.15);
+}
+
+
+/* ================= CAMERA RESULT ================= */
+
+.camera-result {
+    margin-top: 25px;
+
+    padding: 20px;
+
+    background-color: #e3f2fd;
+
+    border-left: 5px solid #1565c0;
+
+    border-radius: 10px;
+
+    text-align: left;
+}
+
+
+.camera-result h3 {
+    color: #1565c0;
+    margin-bottom: 10px;
+}
+
+
+#cameraWasteType {
+    font-size: 17px;
+    color: #333;
+    font-weight: bold;
+}
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 600px) {
+
+    .camera-section {
+        padding: 40px 15px;
+    }
+
+    .camera-section h2 {
+        font-size: 25px;
+    }
+
+    .camera-box {
+        width: 100%;
+        padding: 18px;
+    }
+
+    #cameraPreview {
+        height: 280px;
+    }
+
+    .camera-buttons {
+        flex-direction: column;
+    }
+
+    .camera-buttons button {
+        width: 100%;
+    }
+
+}

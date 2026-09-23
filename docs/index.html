@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoSort AI</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            EcoSort AI
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#classification">Classify</a>
+            <a href="#camera-scanner">Camera</a>
+            <a href="#about">About</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#contact">Contact</a>
+
+            <span id="welcomeUser"></span>
+
+            <button id="logoutBtn">
+                Logout
+            </button>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero" id="home">
+
+            <h1>
+                Smart Waste Classification
+            </h1>
+
+            <p>
+                Identify waste and learn how to dispose
+                of it responsibly.
+            </p>
+
+            <a href="#classification" class="hero-button">
+                Classify Waste
+            </a>
+
+        </section>
+
+
+        <!-- ================= IMAGE CLASSIFICATION ================= -->
+
+        <section class="classification" id="classification">
+
+            <h2>
+                Classify Your Waste
+            </h2>
+
+            <p>
+                Upload an image of waste to identify
+                its category.
+            </p>
+
+
+            <div class="upload-box">
+
+                <input
+                    type="file"
+                    id="wasteImage"
+                    accept="image/*"
+                >
+
+                <div id="imagePreview"></div>
+
+                <button id="classifyBtn">
+                    Classify Waste
+                </button>
+
+            </div>
+
+
+            <div id="result">
+
+                <h3>
+                    Classification Result
+                </h3>
+
+                <p id="wasteType">
+                    No image classified yet.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LIVE CAMERA SCANNER ================= -->
+
+        <section class="camera-section" id="camera-scanner">
+
+            <h2>
+                📷 Live Camera Waste Scanner
+            </h2>
+
+            <p>
+                Use your device camera to capture waste
+                and identify its category using AI.
+            </p>
+
+
+            <div class="camera-box">
+
+
+                <!-- CAMERA PREVIEW -->
+
+                <video
+                    id="cameraPreview"
+                    autoplay
+                    playsinline
+                >
+                </video>
+
+
+                <!-- CANVAS USED TO CAPTURE PHOTO -->
+
+                <canvas
+                    id="cameraCanvas"
+                    style="display: none;"
+                >
+                </canvas>
+
+
+                <!-- CAMERA BUTTONS -->
+
+                <div class="camera-buttons">
+
+                    <button id="openCameraBtn">
+                        📷 Open Camera
+                    </button>
+
+
+                    <button
+                        id="captureBtn"
+                        disabled
+                    >
+                        📸 Capture & Identify Waste
+                    </button>
+
+
+                    <button
+                        id="closeCameraBtn"
+                        disabled
+                    >
+                        ❌ Close Camera
+                    </button>
+
+                </div>
+
+
+                <!-- CAPTURED IMAGE -->
+
+                <div id="capturedImagePreview">
+
+                </div>
+
+
+                <!-- CAMERA RESULT -->
+
+                <div class="camera-result">
+
+                    <h3>
+                        AI Camera Result
+                    </h3>
+
+                    <p id="cameraWasteType">
+                        No waste scanned yet.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= HISTORY ================= -->
+
+        <section class="history-section">
+
+            <h2>
+                My Classification History
+            </h2>
+
+            <p>
+                Your previously classified waste
+                will appear here.
+            </p>
+
+            <div id="historyList">
+                No classification history yet.
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section class="info-section" id="about">
+
+            <h2>
+                About EcoSort AI
+            </h2>
+
+            <p>
+                EcoSort AI is a smart waste classification
+                system that helps users identify different
+                types of waste using artificial intelligence.
+            </p>
+
+            <p>
+                The aim of this project is to make
+                waste segregation easier and promote
+                responsible waste management.
+            </p>
+
+        </section>
+
+
+        <!-- ================= HOW IT WORKS ================= -->
+
+        <section class="info-section" id="how-it-works">
+
+            <h2>
+                How It Works
+            </h2>
+
+
+            <div class="steps-container">
+
+
+                <div class="step-card">
+
+                    <h3>
+                        1. Upload or Capture Image
+                    </h3>
+
+                    <p>
+                        Upload an existing waste image
+                        or capture one using your camera.
+                    </p>
+
+                </div>
+
+
+                <div class="step-card">
+
+                    <h3>
+                        2. AI Classification
+                    </h3>
+
+                    <p>
+                        EcoSort AI analyzes the image
+                        and determines the waste category.
+                    </p>
+
+                </div>
+
+
+                <div class="step-card">
+
+                    <h3>
+                        3. View Result
+                    </h3>
+
+                    <p>
+                        View the detected category
+                        and your classification history.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FEATURES ================= -->
+
+        <section class="features">
+
+
+            <div class="feature-card">
+
+                <h2>
+                    ♻️ Waste Classification
+                </h2>
+
+                <p>
+                    Identify different types of waste.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <h2>
+                    📷 Camera Scanner
+                </h2>
+
+                <p>
+                    Capture waste directly using
+                    your device camera.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <h2>
+                    🌱 Eco Friendly
+                </h2>
+
+                <p>
+                    Learn sustainable waste management.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <h2>
+                    🤖 AI Powered
+                </h2>
+
+                <p>
+                    Use AI technology for smart
+                    classification.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section class="info-section" id="contact">
+
+            <h2>
+                Contact Us
+            </h2>
+
+            <p>
+                Have questions or suggestions
+                about EcoSort AI?
+            </p>
+
+            <p>
+                Email:
+                <strong>
+                    ecosortai@example.com
+                </strong>
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 EcoSort AI
+        </p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
