@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "mongoose": "^9.10.0",
+    "multer": "^2.3.0",
+    "openai": "^7.15.0"
+  }
+}
